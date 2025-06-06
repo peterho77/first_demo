@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('images')->nullable();
+            $table->string('image')->nullable();
             $table->string('title');
             $table->string('slug')->unique();
             $table->longText('content');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
